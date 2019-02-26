@@ -12,6 +12,7 @@ namespace SMC.Models.Entidades
         public int IdReferenciaComercial { get; set; }
         public string NomeDaLoja { get; set; }
         public string Telefone { get; set; }
+        public string Cidade { get; set; }
 
     }
 }

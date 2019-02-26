@@ -11,7 +11,7 @@ namespace SMC.Models.Entidades
         [Key]
         public int IdReferencia { get; set; }
         public string NomeDoBanco { get; set; }
-        public string GerenteDaConta { get; set; }
+        public string Cidade { get; set; }
         public string Telefone { get; set; }
     }
 }

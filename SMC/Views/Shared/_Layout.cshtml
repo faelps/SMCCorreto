@@ -4,7 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <title>@ViewBag.Title - SMC</title>
+    
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />
@@ -22,30 +23,37 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <section class="menu cid-qyXbdnYc0C" once="menu" id="menu3-40" data-rv-view="2429">
+        <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+            <div class="navbar-brand">
+                <span class="navbar-caption-wrap">
+                    <a class="navbar-caption text-white display-5" href="index.php">
+                       SMC
+                    </a>
+                </span>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <span style="color: #FFF;">Seu patrocinador: <span style="font-weight: bold;">admin222222222222</span></span>
+                <div class="navbar-buttons mbr-section-btn">
+                    <a class="btn btn-sm btn-white-outline display-10" href="">MEU CARRINHO</a>
+                    <a class="btn btn-sm btn-white-outline display-10" href="">LOGIN</a>                    '
+                </div>
             </div>
-        </div>
-    </div>
+        </nav>
+    </section>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - SMC</p>
         </footer>
     </div>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -58,19 +66,9 @@
         $('.cpf').mask('000.000.000-00');
         $('.data').mask('00/00/0000');
         $('.telefone').mask('(00)000000000');
-        $('.placa').mask('AAA-0000');
+        $('.cnpj').mask('99.999.999/9999-99');
 
-
-        alteraDiv = function () {
-            if ($('#estadoCivil').val() == 1) {
-                $(".conjugue").show();
-                $("#casamento").hide();
-            }
-
-
-            }
-
-
+  //Buscar Cep
         function busca_cep(CEP_INFO) {
             var n_cep = Number(CEP_INFO.length);
             if (CEP_INFO) {
@@ -99,100 +97,7 @@
                 load_out();
             }
         }
-        function calcular_frete() {
-            var cep = $(".cep").val();
-
-            var acao = "&acao=load_frete&cep=" + cep;
-            if (cep) {
-                $.ajax({
-                    type: 'POST',
-                    url: "php/frete.php",
-                    data: acao,
-                    beforeSend: load_in(),
-                    success: function (data) {
-                        load_out();
-                        $("#load_frete").html(data);
-                    }
-                });
-            }
-        }
-        function load_nome() {
-            var cpf = $(".user_cpf").val();
-            var data_nascimento = $(".user_data_nascimento").val();
-
-            var acao = "&acao=load_cpf&cpf=" + cpf + "&data_nascimento=" + data_nascimento;
-            if (cpf) {
-                $.ajax({
-                    type: 'POST',
-                    url: "php/cpf.php",
-                    data: acao,
-                    beforeSend: load_in(),
-                    dataType: 'json',
-                    success: function (data) {
-                        load_out();
-                        if (data.type === 'ok') {
-                            $(".user_nome").val(data.msg);
-                        } else {
-                            //$("#retorno_dados_cad").html('<span>'+data.msg+'</span><hr />');
-                            alert(data.msg);
-                            $(".user_nome").val('');
-                            $(".user_cpf").val('');
-                        }
-                    }
-                });
-            }
-        }
-        function finalizar() {
-            var dados = $("#create").serialize();
-            var acao = "&acao=finalizar";
-
-            $.ajax({
-                type: 'POST',
-                url: "php/finalizar.php",
-                data: dados + acao,
-                beforeSend: load_in(),
-                dataType: 'json',
-                success: function (data) {
-                    load_out();
-                    if (data.type === 'ok') {
-                        $("#retorno_dados").html(data.msg);
-                        window.location = 'sucesso.php';
-                    } else {
-                        alert(data.msg);
-                        $("#retorno_dados").html('<span>' + data.msg + '</span><hr />');
-                    }
-                },
-                error: function () {
-                    $("#retorno_dados").html('<span>* Houve um erro</span>');
-                }
-            });
-        }
-        function finalizar_cadastro() {
-            var dados = $("#create_cadastro").serialize();
-            var acao = "&acao=finalizar";
-
-            $.ajax({
-                type: 'POST',
-                url: "php/finalizar_cadastro.php",
-                data: dados + acao,
-                beforeSend: load_in(),
-                dataType: 'json',
-                success: function (data) {
-                    load_out();
-                    if (data.type === 'ok') {
-                        $("#retorno_dados_cad").html(data.msg);
-                        window.location = 'sucesso.php';
-                    } else {
-                        alert(data.msg);
-                        $("#retorno_dados_cad").html('<span>' + data.msg + '</span><hr />');
-                    }
-                },
-                error: function () {
-                    $("#retorno_dados_cad").html('<span>* Houve um erro</span>');
-                }
-            });
-        }
-
+        //Carregar Imagem Load enquanto busca o Cep
         $(document).ajaxStop($.unblockUI);
         function load_in() {
             $.blockUI({ message: '<H1><img src="~/_img/load.gif" /></H1><H1></H1>' });
@@ -201,8 +106,8 @@
             $.unblockUI();
         }
     </script>
-    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false)*@
 </body>
 </html>
