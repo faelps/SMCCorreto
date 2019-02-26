@@ -1,0 +1,42 @@
+﻿@model SMC.Models.Entidades.ReferenciasBancarias
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ReferenciasBancarias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeDoBanco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeDoBanco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GerenteDaConta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GerenteDaConta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdReferencia }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

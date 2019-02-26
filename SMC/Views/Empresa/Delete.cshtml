@@ -1,0 +1,168 @@
+﻿@model SMC.Models.Entidades.Empresa
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ResponsavelPelaEmpresa.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResponsavelPelaEmpresa.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazaoSocial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeFantasia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AtividadePrincipal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AtividadePrincipal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InscricaoEstadual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InscricaoEstadual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CapitalRegistrado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CapitalRegistrado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatrimonioLiquido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatrimonioLiquido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoRua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoRua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoNumero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoNumero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoBairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoBairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoCidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoCidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndercoCep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndercoCep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoComplemento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoComplemento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Celular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Celular)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="~/Content/mbr-additional.css" rel="stylesheet" />
+    <link href="~/Content/theme/style.css" rel="stylesheet" />
+    <link href="~/Content/socicon/styles.css" rel="stylesheet" />
+    <link href="~/Content/dropdown/style.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style type="text/css">
+        .form-control {
+            border: 1px solid #000;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+        </footer>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.mask.min.js"></script>
+    <script src="~/Scripts/jquery.blockUI.js"></script>
+
+    <script type="text/javascript">
+        $('.cep').mask('00000-000');
+        $('.cpf').mask('000.000.000-00');
+        $('.data').mask('00/00/0000');
+        $('.telefone').mask('(00)000000000');
+        $('.placa').mask('AAA-0000');
+
+
+        alteraDiv = function () {
+            if ($('#estadoCivil').val() == 1) {
+                $(".conjugue").show();
+                $("#casamento").hide();
+            }
+
+
+            }
+
+
+        function busca_cep(CEP_INFO) {
+            var n_cep = Number(CEP_INFO.length);
+            if (CEP_INFO) {
+                $.ajax({
+                    type: "GET",
+                    url: "https://viacep.com.br/ws/" + CEP_INFO + "/json/?callback=",
+                    dataType: "jsonp",
+                    beforeSend: load_in(),
+                    success: function (data) {
+                        if (data !== null) {
+                            $(".user_uf").val(data.uf);
+                            $(".user_cidade").val(data.localidade);
+                            $(".user_complemento").val(data.complemento);
+                            $(".user_bairro").val(data.bairro);
+                            $(".user_endereco").val(data.logradouro);
+                            calcular_frete();
+                        } else {
+                            load_out();
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        load_out();
+                        alert('ok');
+                    }
+                });
+                load_out();
+            }
+        }
+        function calcular_frete() {
+            var cep = $(".cep").val();
+
+            var acao = "&acao=load_frete&cep=" + cep;
+            if (cep) {
+                $.ajax({
+                    type: 'POST',
+                    url: "php/frete.php",
+                    data: acao,
+                    beforeSend: load_in(),
+                    success: function (data) {
+                        load_out();
+                        $("#load_frete").html(data);
+                    }
+                });
+            }
+        }
+        function load_nome() {
+            var cpf = $(".user_cpf").val();
+            var data_nascimento = $(".user_data_nascimento").val();
+
+            var acao = "&acao=load_cpf&cpf=" + cpf + "&data_nascimento=" + data_nascimento;
+            if (cpf) {
+                $.ajax({
+                    type: 'POST',
+                    url: "php/cpf.php",
+                    data: acao,
+                    beforeSend: load_in(),
+                    dataType: 'json',
+                    success: function (data) {
+                        load_out();
+                        if (data.type === 'ok') {
+                            $(".user_nome").val(data.msg);
+                        } else {
+                            //$("#retorno_dados_cad").html('<span>'+data.msg+'</span><hr />');
+                            alert(data.msg);
+                            $(".user_nome").val('');
+                            $(".user_cpf").val('');
+                        }
+                    }
+                });
+            }
+        }
+        function finalizar() {
+            var dados = $("#create").serialize();
+            var acao = "&acao=finalizar";
+
+            $.ajax({
+                type: 'POST',
+                url: "php/finalizar.php",
+                data: dados + acao,
+                beforeSend: load_in(),
+                dataType: 'json',
+                success: function (data) {
+                    load_out();
+                    if (data.type === 'ok') {
+                        $("#retorno_dados").html(data.msg);
+                        window.location = 'sucesso.php';
+                    } else {
+                        alert(data.msg);
+                        $("#retorno_dados").html('<span>' + data.msg + '</span><hr />');
+                    }
+                },
+                error: function () {
+                    $("#retorno_dados").html('<span>* Houve um erro</span>');
+                }
+            });
+        }
+        function finalizar_cadastro() {
+            var dados = $("#create_cadastro").serialize();
+            var acao = "&acao=finalizar";
+
+            $.ajax({
+                type: 'POST',
+                url: "php/finalizar_cadastro.php",
+                data: dados + acao,
+                beforeSend: load_in(),
+                dataType: 'json',
+                success: function (data) {
+                    load_out();
+                    if (data.type === 'ok') {
+                        $("#retorno_dados_cad").html(data.msg);
+                        window.location = 'sucesso.php';
+                    } else {
+                        alert(data.msg);
+                        $("#retorno_dados_cad").html('<span>' + data.msg + '</span><hr />');
+                    }
+                },
+                error: function () {
+                    $("#retorno_dados_cad").html('<span>* Houve um erro</span>');
+                }
+            });
+        }
+
+        $(document).ajaxStop($.unblockUI);
+        function load_in() {
+            $.blockUI({ message: '<H1><img src="~/_img/load.gif" /></H1><H1></H1>' });
+        }
+        function load_out() {
+            $.unblockUI();
+        }
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

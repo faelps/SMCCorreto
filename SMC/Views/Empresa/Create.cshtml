@@ -1,0 +1,411 @@
+﻿@model SMC.Models.Entidades.Empresa
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<section class="cid-qyY9JUAdBE" id="form3-68" data-rv-view="2720">
+    <div class="container-fluid">
+        <h1 class="mbr-fonts-style mbr-section-title align-center display-2">
+            Cadastro Revendedor Pessoa Física
+        </h1>
+        <div id="retorno_dados_cad"></div>
+        <form action="" id="create_cadastro">
+            <fieldset class="col-lg-12" style="border:1px solid #000000; margin-bottom:1%;">
+                <legend>Dados Da Empresa</legend>
+                <div class="row" style="margin-left:1%;">
+                    <div class="form-group col-lg-4" style="margin-right:1%;">
+                        <label>Razão Social</label>
+                        @Html.EditorFor(model => model.RazaoSocial, new { htmlAttributes = new { @class = "form-control user_nome", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.RazaoSocial, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" ; class="form-control user_nome" name="user_nome" autocomplete="off" />*@
+                    </div>
+
+                    <div class="form-group col-lg-4" style="margin-left: 2%">
+                        <label>Nome Fantasia</label>
+                        @Html.EditorFor(model => model.NomeFantasia, new { htmlAttributes = new { @class = "form-control user_nome", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.NomeFantasia, "", new { @class = "text-danger" })
+                        @*<input type="text" class="form-control user_data_nascimento data" name="user_data_nascimento" autocomplete="off" />*@
+                    </div>
+
+                    <div class="form-group col-lg-3" style="margin-left: 2%">
+                        <label>CNPJ</label>
+                        @Html.EditorFor(model => model.Cnpj, new { htmlAttributes = new { @class = "form-control user_cpf cpf", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.Cnpj, "", new { @class = "text-danger" })
+                        @*<input type="text" class="form-control user_cpf cpf" name="user_cpf" autocomplete="off" />*@
+                    </div>
+
+                </div>
+
+                <div class="row" style="margin-left:1%; margin-right:1%;">
+                    <div class="form-group col-lg-4">
+                        <label>Atividade Principal</label>
+                        @Html.EditorFor(model => model.AtividadePrincipal, new { htmlAttributes = new { @class = "form-control user_rg rg", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.AtividadePrincipal, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" ; class="form-control user_nome" name="user_nome" autocomplete="off" />*@
+                    </div>
+                    <div class="form-group col-lg-3" style="margin-left: 4.5%">
+                        <label>Inscrição Estadual</label>
+                        @Html.EditorFor(model => model.InscricaoEstadual, new { htmlAttributes = new { @class = "form-control user_or or", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.InscricaoEstadual, "", new { @class = "text-danger" })
+                        @*<input type="text" class="form-control user_email" name="user_email" autocomplete="off" />*@
+                    </div>
+
+                    <div class="form-group col-lg-2" style="margin-left:1.5%">
+                        <label>Capital Registrado</label>
+                        @Html.EditorFor(model => model.CapitalRegistrado, new { htmlAttributes = new { @class = "form-control user_or or", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.CapitalRegistrado, "", new { @class = "text-danger" })
+
+                        @*<input type="text"  ; class="form-control user_email" name="user_email" autocomplete="off" />*@
+                    </div>
+
+                    <div class="form-group col-lg-2" style="margin-left: 1.5%">
+                        <label>Patrimonio Liquido</label>
+                        @Html.EditorFor(model => model.PatrimonioLiquido, new { htmlAttributes = new { @class = "form-control user_or or", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.PatrimonioLiquido, "", new { @class = "text-danger" })
+
+                        @*<input type="text"  ; class="form-control user_email" name="user_email" autocomplete="off" />*@
+                    </div>
+                </div>
+
+
+
+            </fieldset>
+
+            <fieldset class="col-lg-12" style="border:1px solid #000000; margin-bottom:1%;">
+                <legend>Endereço</legend>
+                <div class="row" style="margin-left:1%;  margin-right:1%;">
+                    <div class="form-group col-lg-2">
+                        <label>CEP</label>
+                        <input type="text" style="min-width:100%;" class="form-control cep user_cep" name="user_cep" onblur="busca_cep(this.value)" autocomplete="off" />
+                    </div>
+                    <div class="form-group col-lg-4" style="margin-left: 2.5%">
+                        <label>Endereço</label>
+                        <input type="text" class="form-control user_endereco" style="min-width:100%;" name="user_endereco" autocomplete="off" />
+                    </div>
+                    <div class="form-group col-lg-1" style="margin-left: 2.5%">
+                        <label>Número</label>
+                        <input type="text" style="min-width:100%;" class="form-control user_numero" name="user_numero" autocomplete="off" />
+                    </div>
+                    <div class="form-group col-lg-4" style="margin-left: 3.3%">
+                        <label>Bairro</label>
+                        <input type="text" style="min-width:100%;" class="form-control user_bairro" name="user_bairro" autocomplete="off" />
+                    </div>
+
+                </div>
+                <div class="row" style="margin-left: 1%; margin-right:1%;">
+                    <div class="form-group col-lg-12">
+                        <label>Complemento</label>
+                        <input type="text" style="min-width:100%;" class="form-control user_complemento" name="user_complemento" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="row" style="margin-left:1%;">
+                    <div class="form-group col-lg-8">
+                        <label>Cidade</label>
+                        <input type="text" style="min-width:100%;" class="form-control user_cidade" name="user_cidade" autocomplete="off" />
+                    </div>
+                    <div class="form-group col-lg-3" style="margin-left: 6%">
+                        <label>Estado</label>
+                        <input type="text" class="form-control user_uf" name="user_uf" autocomplete="off" />
+                    </div>
+
+                </div>
+
+            </fieldset>
+
+
+            <fieldset class="col-lg-12" style="border:1px solid #000000; margin-bottom:1%;">
+                <legend>Dados Pessoais</legend>
+                <div class="row" style="margin-left:1%;">
+                    <div class="form-group col-lg-6" style="margin-right:1%;">
+                        <label>Nome Completo</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.Nome, new { htmlAttributes = new { @class = "form-control user_nome", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.Nome, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" ; class="form-control user_nome" name="user_nome" autocomplete="off" />*@
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <label>CPF</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.Cpf, new { htmlAttributes = new { @class = "form-control user_cpf cpf", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.Cpf, "", new { @class = "text-danger" })
+                        @*<input type="text" class="form-control user_cpf cpf" name="user_cpf" autocomplete="off" />*@
+                    </div>
+                    <div class="form-group col-lg-2" style="margin-left: 2%">
+                        <label>Data Nascimento</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.DataDeNascimento, new { htmlAttributes = new { @class = "form-control user_data_nascimento data", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.DataDeNascimento, "", new { @class = "text-danger" })
+                        @*<input type="text" class="form-control user_data_nascimento data" name="user_data_nascimento" autocomplete="off" />*@
+                    </div>
+
+                </div>
+
+                <div class="row" style="margin-left:1%; margin-right:1%;">
+                    <div class="form-group col-lg-4">
+                        <label>RG</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.Rg, new { htmlAttributes = new { @class = "form-control user_rg rg", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.Rg, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" ; class="form-control user_nome" name="user_nome" autocomplete="off" />*@
+                    </div>
+                    <div class="form-group col-lg-3" style="margin-left: 2.5%">
+                        <label>Orgão Expeditor</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.OrgaoExpeditor, new { htmlAttributes = new { @class = "form-control user_or or", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.OrgaoExpeditor, "", new { @class = "text-danger" })
+                        @*<input type="text" class="form-control user_email" name="user_email" autocomplete="off" />*@
+                    </div>
+
+                    <div class="form-group col-lg-4" style="margin-left: 3%">
+                        <label>Sexo</label>
+                        @Html.EnumDropDownListFor(model => model.ResponsavelPelaEmpresa.Sexo, htmlAttributes: new { @class = "form-control", style = "min-width:100%" })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.Sexo, "", new { @class = "text-danger" })
+                        @*<input type="text"  ; class="form-control user_email" name="user_email" autocomplete="off" />*@
+                    </div>
+                </div>
+
+                <div class="row" style="margin-left:1%; margin-right:1%;">
+                    <div class="form-group col-lg-2">
+                        <label>Telefone</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.Telefone, new { htmlAttributes = new { @class = "form-control telefone", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.Telefone, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" ; class="form-control telefone" name="user_nome" autocomplete="off" />*@
+                    </div>
+                    <div class="form-group col-lg-2" style="margin-left: 2%">
+                        <label>Celular</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.Celular, new { htmlAttributes = new { @class = "form-control telefone", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.Celular, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" class="form-control telefone" name="user_email" autocomplete="off" />*@
+                    </div>
+
+                    <div class="form-group col-lg-4" style="margin-left: 2%">
+                        <label>Email</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.Email, new { htmlAttributes = new { @class = "form-control user_email", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.Email, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" class="form-control user_email" name="user_email" autocomplete="off" />*@
+                    </div>
+                    <div class="form-group col-lg-3" style="margin-left: 2%">
+                        <label>Estado Civil</label>
+                        @Html.EnumDropDownListFor(model => model.ResponsavelPelaEmpresa.EstadoCivil, htmlAttributes: new { @class = "form-control", id = "estadoCivil", style = "min-width:100%" })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.EstadoCivil, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="row" style="margin-left:1%; margin-right:1%;">
+                    <div class="form-group col-lg-3">
+                        <label>Nome Do Pai</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.NomeDoPai, new { htmlAttributes = new { @class = "form-control", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.NomeDoPai, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" ; class="form-control" name="user_nome" autocomplete="off" />*@
+                    </div>
+                    <div class="form-group col-lg-3" style="margin-left: 2%">
+                        <label>Nome Da Mãe</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.NomeDaMae, new { htmlAttributes = new { @class = "form-control", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.NomeDaMae, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" class="form-control " name="user_email" autocomplete="off" />*@
+                    </div>
+
+                    <div class="form-group col-lg-3" style="margin-left: 2%">
+                        <label>Naturalidade (<strong>Cidade/UF</strong>)</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.Nacionalidade, new { htmlAttributes = new { @class = "form-control", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.Nacionalidade, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" class="form-control user_email" name="user_email" autocomplete="off" />*@
+                    </div>
+                    <div class="form-group col-lg-2" style="margin-left: 2%">
+                        <label>Nacionalidade</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.Nacionalidade, new { htmlAttributes = new { @class = "form-control", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.Nacionalidade, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" class="form-control " name="user_email" autocomplete="off" />*@
+
+                    </div>
+                </div>
+
+                <div class="row" style="margin-left:1%; margin-right:1%;">
+                    <div class="form-group col-lg-12">
+                        <label>Profissão</label>
+                        @Html.EditorFor(model => model.ResponsavelPelaEmpresa.Profissao, new { htmlAttributes = new { @class = "form-control", style = "min-width:100%" } })
+                        @Html.ValidationMessageFor(model => model.ResponsavelPelaEmpresa.Profissao, "", new { @class = "text-danger" })
+                        @*<input type="text" style="min-width:100%" ; class="form-control" name="user_nome" autocomplete="off" />*@
+                    </div>
+                </div>
+
+            </fieldset>
+            <button type="button" class="btn btn-success display-7" onclick="finalizar_cadastro();" style="float: right; cursor: pointer">Finalizar</button>
+            <a class="btn btn-primary display-7" href="#" onclick="calcular_frete();" style="float: right">Calcular Frete</a>
+            <a href="http://federalsistemas.com.br/mmn/_contrato/contrato.pdf" target="_blank">Termos de uso</a>
+        </form>
+
+
+
+    </div>
+</section>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Empresa</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.RazaoSocial, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RazaoSocial, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RazaoSocial, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NomeFantasia, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NomeFantasia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NomeFantasia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AtividadePrincipal, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AtividadePrincipal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AtividadePrincipal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cnpj, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Cnpj, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Cnpj, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.InscricaoEstadual, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.InscricaoEstadual, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.InscricaoEstadual, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CapitalRegistrado, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CapitalRegistrado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CapitalRegistrado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PatrimonioLiquido, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PatrimonioLiquido, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PatrimonioLiquido, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdResponsavel, "IdResponsavel", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdResponsavel", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IdResponsavel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EnderecoRua, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EnderecoRua, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnderecoRua, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EnderecoNumero, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EnderecoNumero, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnderecoNumero, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EnderecoBairro, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EnderecoBairro, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnderecoBairro, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EnderecoCidade, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EnderecoCidade, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnderecoCidade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EnderecoEstado, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EnderecoEstado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnderecoEstado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EndercoCep, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EndercoCep, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EndercoCep, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EnderecoComplemento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EnderecoComplemento, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnderecoComplemento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Celular, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Celular, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Celular, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+}

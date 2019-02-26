@@ -1,0 +1,135 @@
+﻿@model IEnumerable<SMC.Models.Entidades.Empresa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ResponsavelPelaEmpresa.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AtividadePrincipal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InscricaoEstadual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CapitalRegistrado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatrimonioLiquido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoRua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoNumero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoBairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoCidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoEstado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndercoCep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoComplemento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Celular)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResponsavelPelaEmpresa.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RazaoSocial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeFantasia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AtividadePrincipal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cnpj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InscricaoEstadual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CapitalRegistrado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatrimonioLiquido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoRua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoNumero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoBairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoCidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndercoCep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoComplemento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Celular)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdEmpresa }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdEmpresa }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdEmpresa })
+        </td>
+    </tr>
+}
+
+</table>
