@@ -13,6 +13,11 @@ namespace SMC.Controllers
             return View();
         }
 
+        //Teste de commit - Index com id para verificacao de ID via GET
+        public ActionResult Index(int id) {
+            return View(id);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
