@@ -497,8 +497,9 @@ display:none;
     .btn-black,
     .btn-black:active,
     .btn-black.active {
-        background-color: #333333;
-        border-color: #333333;
+        /*background-color: #333333;
+        border-color: #333333;*/
+        background: linear-gradient(-135deg, #86077d, #4158d0);
         color: #ffffff !important;
     }
 

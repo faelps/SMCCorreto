@@ -43,6 +43,7 @@
 
     .navbar-dropdown.navbar-fixed-top {
         position: fixed;
+        background: linear-gradient(-135deg, #86077d, #4158d0);
     }
 
     .navbar-dropdown .navbar-brand span {
