@@ -224,6 +224,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Theme\Login\css\main.css" />
+    <Content Include="Theme\Login\css\menu.css" />
     <Content Include="Theme\Login\css\util.css" />
     <Content Include="Theme\Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Theme\Login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />

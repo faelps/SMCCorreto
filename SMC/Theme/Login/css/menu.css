@@ -1,0 +1,139 @@
+﻿/*menu*/
+section {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section, .container, .container-fluid {
+    position: relative;
+    word-wrap: break-word;
+}
+
+.navbar-dropdown.navbar-fixed-top {
+    position: fixed;
+    background: linear-gradient(-135deg, #86077d, #4158d0);
+}
+
+.cid-qyXbdnYc0C .navbar-dropdown {
+    padding: .5rem 1rem;
+}
+
+.cid-qyXbdnYc0C .navbar {
+    min-height: 77px;
+    transition: all .3s;
+}
+
+.navbar-dropdown {
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: all 0.45s ease;
+    z-index: 1030;
+}
+
+.navbar-expand-lg {
+    flex-wrap: nowrap;
+}
+
+.menu .navbar-brand {
+    display: -webkit-flex;
+}
+
+.cid-qyXbdnYc0C .navbar-brand {
+    flex-shrink: 0;
+    align-items: center;
+    margin-right: 0;
+    padding: 0;
+    transition: all .3s;
+    word-break: break-word;
+    z-index: 1;
+}
+
+
+.cid-qyXbdnYc0C button.navbar-toggler {
+    outline: none;
+    width: 31px;
+    height: 20px;
+    cursor: pointer;
+    transition: all .2s;
+    position: relative;
+    align-self: center;
+}
+
+.navbar-expand-lg .navbar-toggler {
+    display: none;
+}
+
+.cid-qyXbdnYc0C .navbar .navbar-collapse {
+    justify-content: flex-end;
+    z-index: 1;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+}
+
+.navbar-collapse {
+    flex-basis: 100%;
+}
+.cid-qyXbdnYc0C .navbar-buttons {
+    text-align: center;
+}
+
+nav .mbr-section-btn {
+    margin-left: 0rem;
+    margin-right: 0rem;
+}
+
+
+.btn-white-outline::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 2rem;
+    width: 2rem;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
+    transform: scale(0);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-radius: 100px;
+}
+
+.mbr-section-btn a.btn:not(.btn-form):hover {
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+.mbr-section-btn a.btn:not(.btn-form) {
+    border-radius: 100px;
+    transition-property: background-color, color, border-color, box-shadow;
+    transition-duration: .3s,.3s,.3s,.8s;
+    transition-timing-function: ease-in-out;
+}
+
+.btn-white-outline, .btn-white-outline:active, .btn-white-outline.active {
+    background: none;
+    border-color: #ffffff;
+    color: #ffffff !important;
+}
+
+.btn-white-outline {
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar-dropdown .navbar-caption {
+    font-weight: 700;
+    white-space: normal;
+    vertical-align: -4px;
+    line-height: 3.125rem !important;
+}

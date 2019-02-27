@@ -37,6 +37,7 @@ figure {
 
 body {
     color: #232323;
+    background: linear-gradient(-135deg, #86077d, #4158d0);
 }
 
 h1, h2, h3, h4, h5, h6,
