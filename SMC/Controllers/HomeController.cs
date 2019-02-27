@@ -13,6 +13,8 @@ namespace SMC.Controllers
             return View();
         }
 
+        //correcao
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
