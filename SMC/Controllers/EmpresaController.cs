@@ -13,7 +13,11 @@ namespace SMC.Controllers
 {
     public class EmpresaController : Controller
     {
-      
+
+        public ActionResult Index()
+        {
+            return View();
+        }
 
 
         // GET: Empresa/Create
