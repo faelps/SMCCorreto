@@ -1122,6 +1122,7 @@
     <Content Include="Views\Shared\_LayoutSMC.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Shared\_MenuLateral.cshtml" />
+    <Content Include="Views\Painel\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

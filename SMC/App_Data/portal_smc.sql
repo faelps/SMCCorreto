@@ -4,7 +4,7 @@
 
 CREATE TABLE public.dados_pessoais
 (
-    id integer NOT NULL,
+    id serial NOT NULL,
     nome character varying(300) COLLATE pg_catalog."default" NOT NULL,
     cpf character varying(11) COLLATE pg_catalog."default" NOT NULL,
     telefone character varying(11) COLLATE pg_catalog."default",
@@ -28,7 +28,7 @@ ALTER TABLE public.dados_pessoais
 
 CREATE TABLE public.autenticacao
 (
-    id integer NOT NULL,
+    id serial NOT NULL,
     id_dados_pessoais integer NOT NULL,
     login character varying(80) COLLATE pg_catalog."default" NOT NULL,
     senha character varying(80) COLLATE pg_catalog."default" NOT NULL,
