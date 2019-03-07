@@ -202,7 +202,9 @@
       <DependentUpon>201902260609394_ReferenciasComerciais.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Autenticacao.cs" />
     <Compile Include="Models\Contexto\Contexto.cs" />
+    <Compile Include="Models\DadosPessoais.cs" />
     <Compile Include="Models\Entidades\Empresa.cs" />
     <Compile Include="Models\Entidades\EstadoCivil.cs" />
     <Compile Include="Models\Entidades\ReferenciasBancarias.cs" />
@@ -210,7 +212,9 @@
     <Compile Include="Models\Entidades\ResponsavelPelaEmpresa.cs" />
     <Compile Include="Models\Entidades\Sexo.cs" />
     <Compile Include="Models\Entidades\Socios.cs" />
+    <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\Autenticacao.cs" />
     <Compile Include="Repositorio\Conexao.cs" />
   </ItemGroup>
   <ItemGroup>
