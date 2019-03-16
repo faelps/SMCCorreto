@@ -171,47 +171,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PainelController.cs" />
-    <Compile Include="Controllers\ReferenciasBancariaController.cs" />
-    <Compile Include="Controllers\ReferenciasComerciaisController.cs" />
-    <Compile Include="Controllers\ResponsavelPelaEmpresaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201902260128465_Inicialized.cs" />
-    <Compile Include="Migrations\201902260128465_Inicialized.Designer.cs">
-      <DependentUpon>201902260128465_Inicialized.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902260219293_ResponsavelPelaEmpresa.cs" />
-    <Compile Include="Migrations\201902260219293_ResponsavelPelaEmpresa.Designer.cs">
-      <DependentUpon>201902260219293_ResponsavelPelaEmpresa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902260231247_ResponsavelPelaEmpresa1.cs" />
-    <Compile Include="Migrations\201902260231247_ResponsavelPelaEmpresa1.Designer.cs">
-      <DependentUpon>201902260231247_ResponsavelPelaEmpresa1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902260608186_ReferenciasBancarias.cs" />
-    <Compile Include="Migrations\201902260608186_ReferenciasBancarias.Designer.cs">
-      <DependentUpon>201902260608186_ReferenciasBancarias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902260609394_ReferenciasComerciais.cs" />
-    <Compile Include="Migrations\201902260609394_ReferenciasComerciais.Designer.cs">
-      <DependentUpon>201902260609394_ReferenciasComerciais.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Autenticacao.cs" />
-    <Compile Include="Models\Contexto\Contexto.cs" />
     <Compile Include="Models\DadosPessoais.cs" />
-    <Compile Include="Models\Entidades\Empresa.cs" />
-    <Compile Include="Models\Entidades\EstadoCivil.cs" />
-    <Compile Include="Models\Entidades\ReferenciasBancarias.cs" />
-    <Compile Include="Models\Entidades\ReferenciasComerciais.cs" />
-    <Compile Include="Models\Entidades\ResponsavelPelaEmpresa.cs" />
-    <Compile Include="Models\Entidades\Sexo.cs" />
-    <Compile Include="Models\Entidades\Socios.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\Autenticacao.cs" />
@@ -902,26 +869,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Teste.cshtml" />
-    <Content Include="Views\ResponsavelPelaEmpresa\Create.cshtml" />
-    <Content Include="Views\ResponsavelPelaEmpresa\Delete.cshtml" />
-    <Content Include="Views\ResponsavelPelaEmpresa\Details.cshtml" />
-    <Content Include="Views\ResponsavelPelaEmpresa\Edit.cshtml" />
-    <Content Include="Views\ResponsavelPelaEmpresa\Index.cshtml" />
-    <Content Include="Views\ReferenciasBancaria\Create.cshtml" />
-    <Content Include="Views\ReferenciasBancaria\Delete.cshtml" />
-    <Content Include="Views\ReferenciasBancaria\Details.cshtml" />
-    <Content Include="Views\ReferenciasBancaria\Edit.cshtml" />
-    <Content Include="Views\ReferenciasBancaria\Index.cshtml" />
-    <Content Include="Views\ReferenciasComerciais\Create.cshtml" />
-    <Content Include="Views\ReferenciasComerciais\Delete.cshtml" />
-    <Content Include="Views\ReferenciasComerciais\Details.cshtml" />
-    <Content Include="Views\ReferenciasComerciais\Edit.cshtml" />
-    <Content Include="Views\ReferenciasComerciais\Index.cshtml" />
-    <Content Include="Views\Empresa\Create.cshtml" />
-    <Content Include="Views\Empresa\Delete.cshtml" />
-    <Content Include="Views\Empresa\Details.cshtml" />
-    <Content Include="Views\Empresa\Edit.cshtml" />
-    <Content Include="Views\Empresa\Index.cshtml" />
     <Content Include="Theme\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
     <Content Include="Theme\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
     <Content Include="Theme\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
@@ -1132,23 +1079,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902260128465_Inicialized.resx">
-      <DependentUpon>201902260128465_Inicialized.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902260219293_ResponsavelPelaEmpresa.resx">
-      <DependentUpon>201902260219293_ResponsavelPelaEmpresa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902260231247_ResponsavelPelaEmpresa1.resx">
-      <DependentUpon>201902260231247_ResponsavelPelaEmpresa1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902260608186_ReferenciasBancarias.resx">
-      <DependentUpon>201902260608186_ReferenciasBancarias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902260609394_ReferenciasComerciais.resx">
-      <DependentUpon>201902260609394_ReferenciasComerciais.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
