@@ -179,10 +179,12 @@
     </Compile>
     <Compile Include="Models\Autenticacao.cs" />
     <Compile Include="Models\DadosPessoais.cs" />
+    <Compile Include="Models\Empresas.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\Autenticacao.cs" />
     <Compile Include="Repositorio\Conexao.cs" />
+    <Compile Include="Repositorio\DadosPessoais.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\portal_smc.sql" />
@@ -1070,6 +1072,7 @@
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Shared\_MenuLateral.cshtml" />
     <Content Include="Views\Painel\Index.cshtml" />
+    <Content Include="Views\Login\Painel.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
