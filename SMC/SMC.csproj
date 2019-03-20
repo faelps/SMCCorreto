@@ -301,6 +301,7 @@
     <Content Include="Theme\TemaSMC\images\avatar\6.jpg" />
     <Content Include="Theme\TemaSMC\images\avatar\64-1.jpg" />
     <Content Include="Theme\TemaSMC\images\avatar\64-2.jpg" />
+    <Content Include="Theme\TemaSMC\images\favicon.ico" />
     <Content Include="Theme\TemaSMC\images\favicon.png" />
     <Content Include="Theme\TemaSMC\images\logo.png" />
     <Content Include="Theme\TemaSMC\images\logo2.png" />
@@ -413,6 +414,8 @@
     <Content Include="Theme\TemaSMC\assets\scss\style.css.map" />
     <Content Include="Theme\TemaSMC\assets\scss\style.scss" />
     <Content Include="Theme\TemaSMC\images\.gitignore" />
+    <Content Include="Views\Painel\Liberacao.cshtml" />
+    <Content Include="Views\Painel\_Cadastro.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

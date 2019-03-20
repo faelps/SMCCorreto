@@ -18,5 +18,15 @@ namespace SMC.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult _Cadastro()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Liberacao()
+        {
+            return PartialView();
+        }
     }
 }
