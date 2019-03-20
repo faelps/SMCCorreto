@@ -1,7 +1,179 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSMC.cshtml";
 }
 
-<h2>Index</h2>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Nome da Empresa</h4>
+                <div class="text-right">
+                    <h5 style="margin-top:-20px;" class="text-right">12/06/2019</h5>
+                    <span class="text-right">data do cadastro</span>
+                </div>
 
+            </div>
+            <div class="card-body">
+                <div class="default-tab">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Empresa</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Contabilidade</a>
+                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Liberação</a>
+                            <a class="nav-item nav-link" id="nav-backup-tab" data-toggle="tab" href="#nav-backup" role="tab" aria-controls="nav-backup" aria-selected="false">Backups</a>
+                        </div>
+                    </nav>
+                    <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="row">
+                                <div class="col-lg-6" style="background-color:#ff0000">
+                                    <div class="card">
+                                        <div class="card-body card-block">
+                                            <div class="form-group">
+                                                <label for="company" class=" form-control-label">Razão Social</label>
+                                                <input type="text" id="company" placeholder="Razão Social" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="vat" class=" form-control-label">Nome Fantasia</label>
+                                                <input type="text" id="vat" placeholder="Nome Fantasia" class="form-control">
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="street" class="form-control-label">CNPJ</label>
+                                                        <input type="text" style="min-width:100%;" id="street" placeholder="C.N.P.J" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group" style="width:100%;">
+                                                        <label for="street" class="form-control-label">Email</label>
+                                                        <input type="text" style="min-width:100%" id="Email" placeholder="Email" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group" style="width:100%;">
+                                                        <label for="street" class="form-control-label">Ramo de atividade</label>
+                                                        <select name="select" id="select" class="form-control">
+                                                            <option value="0">Please select</option>
+                                                            <option value="1">Option #1</option>
+                                                            <option value="2">Option #2</option>
+                                                            <option value="3">Option #3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group" style="width:100%;">
+                                                        <label for="street" class="form-control-label">Impresora</label>
+                                                        <select name="select" id="select" class="form-control">
+                                                            <option value="0">Please select</option>
+                                                            <option value="1">Option #1</option>
+                                                            <option value="2">Option #2</option>
+                                                            <option value="3">Option #3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6" style="background-color:#4cff00">
+                                    <div class="card">
+                                        <div class="card-body card-block">
+                                            <div class="row">
+                                                <div class=" col-md-8">
+                                                    <div class="form-group">
+                                                        <label for="company" class=" form-control-label">Endereço</label>
+                                                        <input type="text" id="endereco" placeholder="Rua" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="vat" class=" form-control-label">Número</label>
+                                                        <input type="text" id="vat" placeholder="N°" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="bairro" class=" form-control-label">Bairro</label>
+                                                        <input type="text" id="vat" placeholder="Bairro" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="cidade" class=" form-control-label">Cidade</label>
+                                                        <input type="text" id="vat" placeholder="Cidade" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class=" row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="resp1" class=" form-control-label">Reponsaveis</label>
+                                                        <input type="text" id="resp1" placeholder="" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="resp2" class=" form-control-label"></label>
+                                                        <input type="text" id="resp2" placeholder="" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="resp3" class=" form-control-label"></label>
+                                                        <input type="text" id="resp3" placeholder="" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class=" row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="tel1" class=" form-control-label">Telefones</label>
+                                                        <input type="text" id="tel1" placeholder="" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="tel2" class=" form-control-label"></label>
+                                                        <input type="text" id="tel2" placeholder="" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="tel3" class=" form-control-label"></label>
+                                                        <input type="text" id="tel3" placeholder="" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <p>Contbilidade</p>
+                        </div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            <p>Liberação</p>
+                        </div>
+                        <div class="tab-pane fade" id="nav-backup" role="tabpanel" aria-labelledby="nav-backup-tab">
+                            <p>Backups</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
