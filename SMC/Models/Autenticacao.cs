@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -10,7 +11,7 @@ namespace SMC.Models
         public Autenticacao() {
 
         }
-
+       
         public int Id { get; set; }
         public int DadosPessoaisId { get; set; }
         public string Login { get; set; }
