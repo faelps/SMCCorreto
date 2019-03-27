@@ -186,6 +186,7 @@
     <Compile Include="Models\DadosPessoais.cs" />
     <Compile Include="Models\Empresas.cs" />
     <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\Permissoes.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\Autenticacao.cs" />

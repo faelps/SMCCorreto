@@ -22,24 +22,27 @@ namespace SMC.Repositorio.Mapeamento
 
             Property(x => x.NomeFantasia)
                 .HasColumnName("nomeFantasia")
+                .HasColumnType("varchar")
                 .IsRequired()
                 .HasMaxLength(200);
 
             Property(x => x.RazaoSocial)
                 .HasColumnName("razaoSocial")
+                .HasColumnType("varchar")
                 .IsRequired()
                 .HasMaxLength(200);
 
             Property(x => x.Criacao)
                 .HasColumnName("criacao")
+                .HasColumnType("varchar")
                 .IsRequired();
 
-            Property(x => x.IdEndereco)
-                .HasColumnName("idEndereco")
-                   .IsRequired();
+            //Property(x => x.IdEndereco)
+                //.HasColumnName("idEndereco")
+                //   .IsRequired();
 
-           
-           
+            HasRequired(c => c.Endereco)
+                .WithRequiredPrincipal().Map(p => p.MapKey("idEndereco"));
 
 
 

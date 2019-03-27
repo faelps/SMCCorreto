@@ -14,8 +14,11 @@ namespace SMC.Models
         public DateTime Criacao { get; set; }
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
+        public string RamoDeAtividade { get; set; }
+        public IList<string> Responsaveis { get; set; }
+        public IList<string> Telefones { get; set; }
+        public ICollection<Permissoes> Permissoes { get; set; }
 
-       
         public int IdEndereco { get; set; }
         public virtual  Endereco Endereco { get; set; }
     }

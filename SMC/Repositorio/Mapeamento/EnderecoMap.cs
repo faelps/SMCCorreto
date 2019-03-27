@@ -22,41 +22,47 @@ namespace SMC.Repositorio.Mapeamento
 
             Property(x => x.Rua)
                 .HasColumnName("rua")
+                .HasColumnType("varchar")
                 .IsRequired()
                 .HasMaxLength(150);
 
             Property(x => x.Numero)
                 .HasColumnName("numero")
+                .HasColumnType("varchar")
                 .IsRequired()
                 .HasMaxLength(6);
 
             Property(x => x.Complemento)
                 .HasColumnName("complemento")
+                .HasColumnType("varchar")
                 .IsOptional()
                 .HasMaxLength(100);
 
             Property(x => x.Estado)
                 .HasColumnName("estado")
+                .HasColumnType("varchar")
                 .IsRequired()
                 .HasMaxLength(2);
 
             Property(x => x.Cep)
                 .HasColumnName("cep")
+                .HasColumnType("varchar")
                 .IsRequired()
                 .HasMaxLength(8);
 
             Property(x => x.Cidade)
             .HasColumnName("cidade")
+            .HasColumnType("varchar")
             .IsRequired()
             .HasMaxLength(100);
 
             Property(x => x.Bairro)
                 .HasColumnName("bairro")
+                .HasColumnType("varchar")
                 .IsRequired()
                 .HasMaxLength(150);
 
-            HasOptional(x => x.Empresas)
-            .WithRequired(x => x.Endereco);
+          
 
           
         }
